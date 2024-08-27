@@ -7,7 +7,15 @@
 body {
     height: 100vh;
     display: flex;
-    background-color: #060AB2;
+   
+    justify-content: center;
+    align-items: center;
+    background-image: url("./manga-one-piece-wallpaper-thumb.jpg"); /* Update with the correct path */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+  
+    
 }
 
 /* By setting display: flex to the body and margin: auto to the .memory-game container,
@@ -19,7 +27,24 @@ body {
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
+
+    /* position: relative; /* Added to create a containing block for absolutely positioned elements(video) */
+    /* overflow: hidden; Ensure the video doesn't overflow outside the section */ 
 }
+
+
+/* #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire section 
+    z-index: -1;  Places the video behind the cards 
+} */
+
+
+
 
 /* Each card width and height is calculated with calc() CSS function. 
 Let’s make three rows, four card each by setting width to 25% and height to 33.333% minus 10px from margin. */
@@ -46,7 +71,7 @@ Let’s make three rows, four card each by setting width to 25% and height to 33
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: #1C7CCC;
+    background:linear-gradient(135deg, #6b6fd8 10%, #e81741);
     backface-visibility: hidden;
     /* both .front-face and .back-face are stacked up onto each other, because they are absolutely positioned. 
     Every element has a back face, which is a mirror image of its front face.
@@ -54,4 +79,5 @@ Let’s make three rows, four card each by setting width to 25% and height to 33
 }
 .front-side{
     transform: rotateY(180deg);
+    /* background: #5BC0EB; Golden Yellow */
 }
